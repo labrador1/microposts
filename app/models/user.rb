@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   validates :profile, allow_blank: true, length: { minimum: 2, maximum: 100 }
   validates :region, allow_blank: true, length: { minimum: 2,maximum: 100 }
   
+  has_many :microposts
 end
