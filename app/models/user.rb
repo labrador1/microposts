@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
                                     foreign_key: "followed_id",
                                     dependent:   :destroy
   has_many :follower_users, through: :follower_relationships, source: :follower
+  has_many :favorites, dependent: :destroy
 
 
   # 他のユーザーをフォローする

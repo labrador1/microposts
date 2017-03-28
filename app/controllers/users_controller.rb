@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   
   def edit
   end
+  
 
   def update
     if @user.update_attributes(user_params)
@@ -47,6 +48,11 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
   
+  def favorites
+	     @user = User.find(params[:id])
+  end
+  
+
   private
 
   def user_params
