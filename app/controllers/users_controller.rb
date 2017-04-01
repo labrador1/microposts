@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @title = 'Micropost'
+    @count = @user.microposts.count
     @microposts = @user.microposts.order(created_at: :desc)
   end
   
@@ -49,7 +51,11 @@ class UsersController < ApplicationController
   end
   
   def favorites
-	     @user = User.find(params[:id])
+    @user = User.find(params[:id])
+    @title = 'Favorites'
+    @count = @user.favorite_microposts.count
+    @microposts = @user.favorite_microposts
+    render 'show'
   end
   
 
