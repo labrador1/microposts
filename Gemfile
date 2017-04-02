@@ -28,6 +28,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'carrierwave'
 
+gem 'rmagick'
+
 gem 'faker'
 
 # Use Unicorn as the app server
